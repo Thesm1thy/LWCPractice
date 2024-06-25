@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Account Search" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <lightning-input label="Account Name" value={accountName} onchange={handleInputChange}></lightning-input>
+            <lightning-button label="Search" onclick={handleSearch}></lightning-button>
+        </div>
+        <template if:true={accounts}>
+            <ul>
+                <template for:each={accounts} for:item="account">
+                    <li key={account.Id}>{account.Name}</li>
+                </template>
+            </ul>
+        </template>
+    </lightning-card>
+</template>
